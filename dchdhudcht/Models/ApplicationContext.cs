@@ -7,6 +7,10 @@ using MySql.Data.MySqlClient;
 
 namespace dchdhudcht.Models
 {
+    /*
+        Add-Migration Initial
+        Update-Database
+    */
 
     public class ApplicationContext
     {
@@ -26,6 +30,11 @@ namespace dchdhudcht.Models
         public DbSet<Product> Products { get; set; }
 
         internal void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Update(Product product)
         {
             throw new NotImplementedException();
         }
