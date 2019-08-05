@@ -1,3 +1,4 @@
+using dchdhudcht.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,6 +22,7 @@ namespace dchdhudcht
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.Add(new ServiceDescriptor(typeof(ApplicationContext), new ApplicationContext(Configuration.GetConnectionString("Test"))));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
