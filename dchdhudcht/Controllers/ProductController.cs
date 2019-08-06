@@ -15,16 +15,17 @@ namespace dchdhudcht.Controllers
         public ProductController(ApplicationContext db)
         {
             this.db = db;
-            if (!db.Products.Any())
+           /* if (!db.Products.Any())
             {
                 db.Products.Add(new Product { Name = "iPhone X", Company = "Apple", Price = 79900 });
                 db.Products.Add(new Product { Name = "Galaxy S8", Company = "Samsung", Price = 49900 });
                 db.Products.Add(new Product { Name = "Pixel 2", Company = "Google", Price = 52900 });
                 db.SaveChanges();
-            }
+            }*/
         }
 
-        [HttpGet]
+        
+        [HttpGet]/*("[action]")]*/
         public IEnumerable<Product> Get()
         {
             return db.Products.ToList();

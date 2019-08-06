@@ -22,8 +22,8 @@ namespace dchdhudcht
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.Add(new ServiceDescriptor(typeof(ApplicationContext), new ApplicationContext("server=localhost;port=3306;database=test;uid=root;password=root")));
-
+            services.Add(new ServiceDescriptor(typeof(ApplicationContext), new ApplicationContext(Configuration.GetConnectionString("DefaultConnection"))));
+            var tao = new ApplicationContext(Configuration.GetConnectionString("DefaultConnection"));
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

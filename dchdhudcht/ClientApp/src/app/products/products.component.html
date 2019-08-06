@@ -1,0 +1,13 @@
+<h1>Products</h1>
+
+<div *ngFor="let p of products">
+  <ng-template [ngIf]="product?.id != p.id" [ngIfElse]="edit">
+    <a href="#">{{p?.name}}</a>
+    <p>{{p?.company}}</p>
+    <p>{{p?.price}}</p>
+    <div>
+      <button class="btn btn-sm btn-primary" (click)="editProduct(p)">Изменить</button>
+      <button class="btn btn-sm btn-danger" (click)="delete(p)">Удалить</button>
+    </div>
+  </ng-template>
+</div>
