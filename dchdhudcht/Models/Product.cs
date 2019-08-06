@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace dchdhudcht.Models
+﻿namespace dchdhudcht.Models
 {
     public class Product
     {
+        private ApplicationContext context;
         public int Id { get; set; }
         public string Name { get; set; }    // название 
         public string Company { get; set; } // производитель

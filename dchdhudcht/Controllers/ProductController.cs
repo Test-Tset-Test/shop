@@ -28,6 +28,8 @@ namespace dchdhudcht.Controllers
         [HttpGet]/*("[action]")]*/
         public IEnumerable<Product> Get()
         {
+            int tet = 1;
+            var test = db.Products;
             return db.Products.ToList();
         }
 

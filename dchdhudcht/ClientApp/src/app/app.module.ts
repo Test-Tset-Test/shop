@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductsComponent } from './products/products.component';
+import { DataService } from './services/product.service';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { ProductsComponent } from './products/products.component';
       { path: 'products', component: ProductsComponent },
     ])
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

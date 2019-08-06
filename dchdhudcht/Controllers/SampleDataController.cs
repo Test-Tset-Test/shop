@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace dchdhudcht.Controllers
 {
-    [Route("api/simple")]
+    [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
         private static string[] Summaries = new[]
@@ -15,7 +15,7 @@ namespace dchdhudcht.Controllers
         };
 
         [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecastss()
+        public IEnumerable<WeatherForecast> WeatherForecasts()
         {
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
