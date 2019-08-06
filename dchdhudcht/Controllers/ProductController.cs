@@ -28,9 +28,9 @@ namespace dchdhudcht.Controllers
         [HttpGet]/*("[action]")]*/
         public IEnumerable<Product> Get()
         {
-            int tet = 1;
-            var test = db.Products;
-            return db.Products.ToList();
+            ApplicationContext context = HttpContext.RequestServices.GetService(typeof(ApplicationContext)) as ApplicationContext;
+            List<Product> list = context.GetAllProducts();
+            return context.GetAllProducts();
         }
 
         [HttpGet("{id}")]
