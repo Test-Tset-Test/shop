@@ -24,8 +24,16 @@ namespace Shop
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            /*
+             
            var resolver = ResolverFactory.GetResolver(Configuration.GetValue<string>("ProviderType"));
             resolver.ResolveDB(services,this.Configuration);
+            resolver.ResolveRepositories(services);
+             */
+
+            IConfiguration config = Configuration.GetSection("ProviderType");
+            var resolver = ResolverFactory.GetResolver(config.GetValue<string>("MsSql"));
+            resolver.ResolveDB(services, this.Configuration);
             resolver.ResolveRepositories(services);
 
 
