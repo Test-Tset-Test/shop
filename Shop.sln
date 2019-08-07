@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop", "Shop\Shop.csproj", "{1015CFB9-D94D-4632-A86F-F7FCE44146F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlDataLayer", "MySqlDataLayer\MySqlDataLayer.csproj", "{ED90834E-15BF-4FA1-A20D-9F95935890E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySqlDataLayer", "MySqlDataLayer\MySqlDataLayer.csproj", "{ED90834E-15BF-4FA1-A20D-9F95935890E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModels", "DataModels\DataModels.csproj", "{D1456EC5-7205-4047-B75D-4FCC51D6FECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModels", "DataModels\DataModels.csproj", "{D1456EC5-7205-4047-B75D-4FCC51D6FECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{E8903A07-8306-4E8A-ACAC-5547BC92597E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{E8903A07-8306-4E8A-ACAC-5547BC92597E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resolver", "Resolver\Resolver.csproj", "{84F3CF8B-3E63-41B7-942E-DA9E0499FFFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resolver", "Resolver\Resolver.csproj", "{84F3CF8B-3E63-41B7-942E-DA9E0499FFFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSqlDataLayer", "MsSqlDataLayer\MsSqlDataLayer.csproj", "{59075EFA-658B-4D22-9C0F-1E7AC769D31E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{84F3CF8B-3E63-41B7-942E-DA9E0499FFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F3CF8B-3E63-41B7-942E-DA9E0499FFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84F3CF8B-3E63-41B7-942E-DA9E0499FFFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59075EFA-658B-4D22-9C0F-1E7AC769D31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59075EFA-658B-4D22-9C0F-1E7AC769D31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59075EFA-658B-4D22-9C0F-1E7AC769D31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59075EFA-658B-4D22-9C0F-1E7AC769D31E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
