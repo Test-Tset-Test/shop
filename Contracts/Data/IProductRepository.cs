@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using DataModels;
 
-namespace MySqlDataLayer.Repositories
+namespace Contracts.Repositories
 {
     public interface IProductRepository
     {

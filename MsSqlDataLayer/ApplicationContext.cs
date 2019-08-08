@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using DataModels;
 using Microsoft.EntityFrameworkCore;
 
-namespace MsSqlDataLayer
+namespace MySqlDataLayer
 {
     public class MsSqlContext : DbContext
 
@@ -13,7 +13,6 @@ namespace MsSqlDataLayer
         public MsSqlContext(DbContextOptions<MsSqlContext> options)
                   : base(options)
         { }
-
         public DbSet<Product> Products { get; set; }
     }
 }

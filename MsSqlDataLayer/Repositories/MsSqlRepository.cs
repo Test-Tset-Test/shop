@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Contracts.Data;
+using MySqlDataLayer;
 
 namespace MsSqlDataLayer.Repositories
 {

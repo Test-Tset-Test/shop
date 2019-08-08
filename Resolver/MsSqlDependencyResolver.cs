@@ -11,12 +11,11 @@ using MySqlDataLayer.Repositories;
 
 namespace Resolver
 {
-    public class MySqlDependencyResolver: IDependencyResolver
+    public class MsSqlDependencyResolver : IDependencyResolver
     {
         public void ResolveDB(IServiceCollection services, IConfiguration configuration)
         {
-            //services.Add(new ServiceDescriptor(typeof(MySqlContext), new MySqlContext(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))));
-            string connectionString = configuration.GetConnectionString("MySqlConnection");
+            string connectionString = configuration.GetConnectionString("MsSqlConnection");
             services.AddDbContext<MySqlContext>(options => options.UseSqlServer(connectionString));
 
         }

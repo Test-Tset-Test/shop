@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Contracts.Repositories;
 using DataModels;
-using MySqlDataLayer.Repositories;
+using MySqlDataLayer;
 
 namespace MsSqlDataLayer.Repositories
 {

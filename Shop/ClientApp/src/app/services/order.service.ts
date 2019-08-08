@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../models/product';
+import { Order } from '../models/order';
 
 @Injectable()
-export class ProductService {
+export class OrderService {
 
-  private url = "/api/products";
+  private url = "/api/orders";
 
   constructor(private http: HttpClient) {
   }
 
-  getProducts() {
+  getOrders() {
     return this.http.get(this.url);
   }
 
-  createProduct(product: Product) {
+  createOrder(product: Order) {
     return this.http.post(this.url, product);
   }
-  updateProduct(product: Product) {
+  updateOrder(order: Order) {
 
-    return this.http.put(this.url + '/' + product.id, product);
+    return this.http.put(this.url + '/' + order.id, order);
   }
-  deleteProduct(id: number) {
+  deleteOrder(id: number) {
     return this.http.delete(this.url + '/' + id);
   }
 }

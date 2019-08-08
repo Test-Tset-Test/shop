@@ -10,13 +10,16 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProductsComponent } from './products/products.component';
-import { DataService } from './services/product.service';
+import { ProductService } from './services/product.service';
+import {OrdersComponent} from "./orders/orders.component";
+import {OrderService} from "./services/order.service";
 
 
 @NgModule({
   declarations: [
-    ProductsComponent,
     AppComponent,
+    OrdersComponent,
+    ProductsComponent,
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
@@ -31,9 +34,10 @@ import { DataService } from './services/product.service';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'products', component: ProductsComponent },
+      { path: 'orders', component: OrdersComponent },
     ])
   ],
-  providers: [DataService],
+  providers: [OrderService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

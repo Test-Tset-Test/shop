@@ -11,6 +11,8 @@ namespace Resolver
         {
             if (type == "MySql")
                 return new MySqlDependencyResolver();
+            if (type == "MsSql")
+                return new MsSqlDependencyResolver();
 
             return null;
         }

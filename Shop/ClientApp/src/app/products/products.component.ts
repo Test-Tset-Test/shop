@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product';
-import { DataService } from '../services/product.service';
+import {ProductService} from '../services/product.service';
 
 @Component({
   selector: 'app-products-component',
@@ -12,23 +12,23 @@ export class ProductsComponent {
   products: Product[];
   tableMode: boolean = true;
 
-  constructor(private dataService: DataService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.loadProducts(); 
+    this.loadProducts();
   }
 
   loadProducts() {
-    this.dataService.getProducts()
+    this.productService.getProducts()
       .subscribe((data: Product[]) => this.products = data);
   }
 
   save() {
     if (this.product.id == null) {
-      this.dataService.createProduct(this.product)
+      this.productService.createProduct(this.product)
         .subscribe((data: Product) => this.products.push(data));
     } else {
-      this.dataService.updateProduct(this.product)
+      this.productService.updateProduct(this.product)
         .subscribe(data => this.loadProducts());
     }
     this.cancel();
@@ -41,7 +41,7 @@ export class ProductsComponent {
     this.tableMode = true;
   }
   delete(p: Product) {
-    this.dataService.deleteProduct(p.id)
+    this.productService.deleteProduct(p.id)
       .subscribe(data => this.loadProducts());
   }
   add() {
