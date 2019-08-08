@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Contracts.Data;
+using DataModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Shop.Controllers
@@ -18,7 +16,7 @@ namespace Shop.Controllers
 
 
         [HttpGet]/*("[action]")]*/
-        public IEnumerable<DataModels.Order> Get()
+        public IEnumerable<Order> Get()
         {
             return repo.GetOrders();
         }

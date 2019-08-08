@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Contracts.Data;
 using DataModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace MsSqlDataLayer.Repositories
 {
@@ -11,7 +12,7 @@ namespace MsSqlDataLayer.Repositories
     {
         public OrdersRepository(MsSqlContext context) : base(context) { }
 
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>().HasData(
                 new Order
@@ -24,7 +25,7 @@ namespace MsSqlDataLayer.Repositories
                 new Order { ProductId = 2 },
                 new Order { ProductId = 1 }
             );
-        }*/
+        }
         public List<Order> GetOrders()
         {
             return this.context.Orders.ToList();
