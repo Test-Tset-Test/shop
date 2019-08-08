@@ -1,5 +1,5 @@
 ﻿using Contracts;
-using Contracts.Repositories;
+using Contracts.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

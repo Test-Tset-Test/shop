@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Contracts.Data;
-using DataModels;
 using Microsoft.AspNetCore.Mvc;
+using DataModels;
 
 namespace Shop.Controllers
 {

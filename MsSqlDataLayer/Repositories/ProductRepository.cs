@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Contracts.Repositories;
+using Contracts.Data;
 using DataModels;
 
 namespace MsSqlDataLayer.Repositories

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-
+using Contracts.Data;
 using Microsoft.AspNetCore.Mvc;
-using Contracts.Repositories;
 using DataModels;
 
 namespace Shop.Controllers
