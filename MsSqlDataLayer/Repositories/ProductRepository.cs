@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Contracts.Repositories;
 using DataModels;
-using MySqlDataLayer;
 
 namespace MsSqlDataLayer.Repositories
 {

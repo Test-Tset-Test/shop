@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DataModels;
+﻿using DataModels;
 using Microsoft.EntityFrameworkCore;
 
-namespace MySqlDataLayer
+namespace MsSqlDataLayer
 {
     public class MsSqlContext : DbContext
 
@@ -14,5 +10,6 @@ namespace MySqlDataLayer
                   : base(options)
         { }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
