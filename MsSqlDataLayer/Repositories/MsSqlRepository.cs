@@ -8,7 +8,7 @@ namespace MsSqlDataLayer.Repositories
     public class MsSqlRepository : IRepository
     {
         protected MsSqlContext context;
-        public MsSqlRepository(MsSqlContext context)
+        protected MsSqlRepository(MsSqlContext context)
         {
             this.context = context;
         }
