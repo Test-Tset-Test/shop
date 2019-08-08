@@ -5,7 +5,7 @@ using DataModels;
 
 namespace Shop.Controllers
 {
-    [Route("api/orders")]
+    [Route("api/[controller]")]
     public class OrderController : Controller
     {
         IOrderRepository repo;
@@ -15,9 +15,10 @@ namespace Shop.Controllers
         }
 
 
-        [HttpGet]/*("[action]")]*/
+        [HttpGet]
         public IEnumerable<Order> Get()
         {
+            var test = "K_C";
             return repo.GetOrders();
         }
     }

@@ -5,7 +5,7 @@ import { Order } from '../models/order';
 @Injectable()
 export class OrderService {
 
-  private url = "/api/orders";
+  private url = "/api/order";
 
   constructor(private http: HttpClient) {
   }
