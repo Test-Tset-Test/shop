@@ -33,7 +33,7 @@ namespace Shop
 
             IConfiguration config = Configuration.GetSection("ProviderType");
             var resolver = ResolverFactory.GetResolver(config.GetValue<string>("MsSql"));
-            resolver.ResolveDB(services, this.Configuration);
+            resolver.ResolveDb(services, this.Configuration);
             resolver.ResolveRepositories(services);
 
 

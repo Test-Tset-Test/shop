@@ -5,7 +5,7 @@ namespace Contracts
 {
     public interface IDependencyResolver
     {
-        void ResolveDB(IServiceCollection services, IConfiguration configuration);
+        void ResolveDb(IServiceCollection services, IConfiguration configuration);
         void ResolveRepositories(IServiceCollection services);
 
     }

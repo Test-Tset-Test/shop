@@ -10,7 +10,7 @@ namespace Resolver
 {
     public class MsSqlDependencyResolver : IDependencyResolver
     {
-        public void ResolveDB(IServiceCollection services, IConfiguration configuration)
+        public void ResolveDb(IServiceCollection services, IConfiguration configuration)
         {
             string connectionString = configuration.GetConnectionString("MsSqlConnection");
             services.AddDbContext<MySqlContext>(options => options.UseSqlServer(connectionString));
