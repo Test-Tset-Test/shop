@@ -5,10 +5,9 @@ using DataModels;
 
 namespace MsSqlDataLayer.Repositories
 {
-    public class OrdersRepository : MsSqlRepository, IOrderRepository
+    public class OrderRepository : MsSqlRepository, IOrderRepository
     {
-        public OrdersRepository(MsSqlContext context) : base(context) { }
-
+        public OrderRepository(MsSqlContext context) : base(context) { }
         public List<Order> GetOrders()
         {
             return this.context.Orders.ToList();

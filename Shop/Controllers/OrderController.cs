@@ -18,7 +18,6 @@ namespace Shop.Controllers
         [HttpGet]
         public IEnumerable<Order> Get()
         {
-            var test = "K_C";
             return repo.GetOrders();
         }
     }
