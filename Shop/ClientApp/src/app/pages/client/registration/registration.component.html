@@ -1,0 +1,47 @@
+<form #regForm="ngForm" (change)="changeF(regForm)" (ngSubmit)="onSubmit(regForm)">
+  <div class="form-group">
+    <label [ngClass]="{'form__row--error' : errorsForm.login}">
+      <span class="text">Логин</span>
+      <input type="text" [ngClass]="{'form-control' : true}" placeholder="логин" name="login" [(ngModel)]=user.login
+             required maxlength="35"
+             minlength="3">
+      <span class="message">{{errorsForm.login}}</span>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="form__row" [ngClass]="{'form__row--error' : errorsForm.email}">
+      <span class="text">E-Mail</span>
+      <input type="text" [ngClass]="{'form-control' : true}" placeholder="логин" name="email" [(ngModel)]=user.email
+             required email
+             maxlength="35" minlength="3">
+      <span class="message">{{ errorsForm.email }}</span>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="form__row" [ngClass]="{'form__row--error' : errorsForm.password}"><!-- form__row--error -->
+      <span class="text">Пароль</span>
+      <input type="password" [ngClass]="{'form-control' : true}" placeholder="пароль" name="password"
+             [(ngModel)]=user.password required
+             maxlength="35" minlength="3">
+      <span class="message">
+      <span class="message">{{errorsForm.password}}</span>
+    </span>
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="form__row" [ngClass]="{'form__row--error' : errorsForm.password_repeat}"><!-- form__row--error -->
+      <span class="text">Подтверждение пароля</span>
+      <input type="password" [ngClass]="{'form-control' : true}" placeholder="пароль" name="password_repeat"
+             [(ngModel)]=user.password_repeat
+             required maxlength="35" minlength="3">
+      <span class="message">
+      <span class="message">{{errorsForm.password_repeat}}</span>
+    </span>
+    </label>
+  </div>
+  <div class="form-group">
+    <div class="form__row">
+      <input type="submit" class="button btn btn-primary" value="зарегистрироваться"/>
+    </div>
+  </div>
+</form>
