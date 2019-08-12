@@ -20,6 +20,7 @@ namespace Resolver
         public void ResolveRepositories(IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
         }
     }

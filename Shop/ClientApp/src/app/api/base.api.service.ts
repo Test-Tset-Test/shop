@@ -5,7 +5,7 @@ import {catchError, map} from 'rxjs/operators';
 
 @Injectable()
 export class BaseApiService {
-  private baseUrl = 'https://localhost:44374/api/';
+  private baseUrl = 'https://localhost:44374/api';
 
   constructor(public httpClient: HttpClient) {
   }
