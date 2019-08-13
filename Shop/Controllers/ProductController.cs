@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Contracts.Data;
-using Microsoft.AspNetCore.Mvc;
 using DataModels;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
 
 namespace Shop.Controllers
 {
-    [Route("api/products")]
+    [Microsoft.AspNetCore.Mvc.Route("api/products")]
     public class ProductController : Controller
     {
         IProductRepository repo;
@@ -23,12 +24,13 @@ namespace Shop.Controllers
         }
 
 
+        [Microsoft.AspNetCore.Authorization.Authorize]
         [HttpGet]/*("[action]")]*/
         public IEnumerable<Product> Get()
         {
-            return repo.GetProducts();
-        }
+                return repo.GetProducts();
 
+        }
         //[HttpGet("{id}")]
         //public Product Get(int id)
         //{
@@ -72,4 +74,5 @@ namespace Shop.Controllers
         //    return Ok(product);
         //}
     }
+
 }

@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getDataProductsList({observe: 'response'}).subscribe(
+    this.productService.getDataProductsList().subscribe(
       (response: any) => {
         return this.products = response.body;
       }

@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Web.Mvc;
 using Contracts.Data;
 using DataModels;
 
@@ -41,6 +40,7 @@ namespace MsSqlDataLayer.Repositories
             return user;*/
             return true;
         }
+
         /*private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             if (password == null) throw new ArgumentNullException("password");
