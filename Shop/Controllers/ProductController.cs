@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
 using Contracts.Data;
 using DataModels;
+using Microsoft.AspNetCore.Mvc;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 
 namespace Shop.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("api/products")]
+    [Microsoft.AspNetCore.Authorization.Authorize]
+    [ApiController]
+    [Route("api/products")]
     public class ProductController : Controller
     {
         IProductRepository repo;
@@ -24,8 +26,7 @@ namespace Shop.Controllers
         }
 
 
-        [Microsoft.AspNetCore.Authorization.Authorize]
-        [HttpGet]/*("[action]")]*/
+        [System.Web.Mvc.HttpGet]/*("[action]")]*/
         public IEnumerable<Product> Get()
         {
                 return repo.GetProducts();

@@ -14,6 +14,6 @@ export class AuthApiService {
     return this.baseApi.post<UserAuthTokenModel>('/login', userData);
   };
   getToken = (): string => {
-    return window.localStorage.getItem('authToken');
+    return window.localStorage.getItem('Authorization');
   };
 }

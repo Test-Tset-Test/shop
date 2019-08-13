@@ -11,7 +11,7 @@ export class ProductsApiService {
   }
 
   getDataProductsList = (): Observable<HttpEvent<ProductModel>> => {
-    const myHeaders = {'x-auth-token': this.authApiService.getToken()};
+    const myHeaders = {'Authorization': "Bearer "+this.authApiService.getToken()};
     const myParams = new URLSearchParams();
     return this.baseService.get<ProductModel>('/products', {headers: myHeaders, params: myParams});
   }

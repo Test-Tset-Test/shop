@@ -47,8 +47,8 @@ namespace Shop.Controllers
  
             // 3. Генерируем JWT.
             var token = new JwtSecurityToken(
-                issuer: "DemoApp",
-                audience: "DemoAppClient",
+                issuer: "Shop",
+                audience: "Shop",
                 claims: claims,
                 expires: DateTime.Now.AddMinutes(5),
                 signingCredentials: new SigningCredentials(

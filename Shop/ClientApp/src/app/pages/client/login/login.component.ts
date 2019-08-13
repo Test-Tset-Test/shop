@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       value['remember'] = true;
       this.authService.login(value).subscribe(
         (response: UserAuthTokenModel) => {
+          window.localStorage.setItem('Authorization', '' + response.Value + '');
           this.router.navigate(['home']);
         },
         error => {

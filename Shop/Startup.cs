@@ -45,7 +45,7 @@ namespace Shop
                         ValidIssuer = "Shop",
  
                         ValidateAudience = true,
-                        ValidAudience = "ShopClient",
+                        ValidAudience = "Shop",
  
                         ValidateLifetime = true,
  

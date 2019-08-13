@@ -22,7 +22,7 @@ interface UserAuthModel {
 }
 
 interface UserAuthTokenModel {
-  token: string;
+  Value: string;
 }
 
 interface UserAuthFormModel {
