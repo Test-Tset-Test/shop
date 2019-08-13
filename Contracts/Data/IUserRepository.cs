@@ -5,5 +5,6 @@ namespace Contracts.Data
     public interface IUserRepository
     {
         bool CreateUser(User data);
+        bool LoginUser(string login, string password);
     }
 }

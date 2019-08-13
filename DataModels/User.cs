@@ -14,4 +14,10 @@ namespace DataModels
         [Required(ErrorMessage = "Поле Password не может быть пустым")]
         public string Password { get; set; }
     }
+
+    public class LoginUser
+    {
+        public string Login { get; set; }
+        public string Password { get; set; }
+    }
 }

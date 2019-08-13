@@ -22,6 +22,25 @@ namespace MsSqlDataLayer.Repositories
             context.SaveChanges();
             return true;
         }
+
+        public bool LoginUser(string login, string password)
+        {
+            if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
+                return false;
+            
+            
+            
+            /*var user = _context.Users.SingleOrDefault(x => x.Username == username);
+            // check if username exists
+            if (user == null)
+                return null;
+            // check if password is correct
+            if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+                return null;
+            // authentication successful
+            return user;*/
+            return true;
+        }
         /*private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             if (password == null) throw new ArgumentNullException("password");
