@@ -1,44 +1,34 @@
-import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
-import {RegService} from '../../../services/reg.service';
-
-interface UserReg {
-  login: string;
-  email: string;
-  password: string;
-  password_repeat: string;
-}
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: 'registration.component.html'
+  selector: 'app-login',
+  templateUrl: 'login.component.html'
 })
 
-export class RegistrationComponent implements OnInit {
-  user = {} as UserReg;
-  errorsForm = {
-    login: '',
-    email: '',
-    password: '',
-    password_repeat: '',
-  };
-  @ViewChild('regForm')
-  regForm: NgForm;
+export class LoginComponent implements OnInit {
+  user = {} as UserAuthModel;
+  errorsForm = {} as UserAuthFormModel;
+  @ViewChild('loginForm')
+  loginForm: NgForm;
 
-  constructor(private router: Router,  private reg: RegService) {
+  constructor(private router: Router, private authService: AuthService) {
 
   }
 
-  onSubmit({value, valid}): { value: UserReg, valid: boolean } {
-    const validFormLogin: object = this.regForm.controls;
+  onSubmit({value, valid}): { value: UserAuthModel, valid: boolean } {
+    const validFormLogin: object = this.loginForm.controls;
     if (this.checkValidate(validFormLogin, valid)) {
-      this.reg.registrationUser(value).subscribe(
-        (response) => {
-          this.router.navigate(["home"]);
+      value['remember'] = true;
+      this.authService.login(value).subscribe(
+        (response: UserAuthTokenModel) => {
+          window.localStorage.setItem('authToken', '' + response.token + '');
+          this.router.navigate(['home']);
         },
-        (err) => {
-          return err;
+        error => {
+          this.errorsForm.password = 'Неправильный логин или пароль.';
         }
       );
     } else {
@@ -47,8 +37,8 @@ export class RegistrationComponent implements OnInit {
     return;
   }
 
-  changeF({value, valid}): { value: UserReg, valid: boolean } {
-    const validFormLogin: object = this.regForm.controls;
+  changeF({value, valid}): { value: UserAuthModel, valid: boolean } {
+    const validFormLogin: object = this.loginForm.controls;
     this.checkValidate(validFormLogin, valid);
     return;
   }
@@ -76,12 +66,12 @@ export class RegistrationComponent implements OnInit {
         this.errorsForm[item] = '';
       }
     }
-    if ((validFormLogin['password'].valid && validFormLogin['password_repeat'].valid)
-      && (validFormLogin['password'].value !== validFormLogin['password_repeat'].value)) {
-      this.errorsForm.password_repeat = 'Пароли не совпадают';
-      valid = false;
+
+    if (valid) {
+      return true;
+    } else {
+      return false;
     }
-    return !!valid;
 
   }
 

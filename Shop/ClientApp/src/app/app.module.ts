@@ -8,6 +8,8 @@ import {LayoutClientModule} from './pages/client/layoutClient.module';
 import {AppComponent} from "./components/app/app.component";
 import {ProductsApiService} from "./api/product.api.service";
 import {BaseApiService} from "./api/base.api.service";
+import {AuthApiService} from "./api/auth.api.service";
+import {AuthService} from "./services/auth.service";
 
 
 const appRoutes: Routes = [
@@ -25,7 +27,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [ProductsApiService,BaseApiService],
+  providers: [AuthService, AuthApiService, BaseApiService, ProductsApiService,],
   bootstrap: [AppComponent]
 })
 export class AppModule {

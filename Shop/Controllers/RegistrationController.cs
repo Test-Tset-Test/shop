@@ -19,8 +19,7 @@ namespace Shop.Controllers
             {
                 return BadRequest();
             }
-            // map dto to entity
-            
+            // map dto to entit
             return Ok();
         }
     }

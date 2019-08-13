@@ -9,6 +9,8 @@ import {ProductsComponent} from "./products/products.component";
 import {ProductsModule} from "./products/products.module";
 import {RegistrationModule} from "./registration/registration.module";
 import {RegistrationComponent} from "./registration/registration.component";
+import {LoginComponent} from "./login/login.component";
+import {LoginModule} from "./login/login.module";
 
 
 
@@ -18,6 +20,7 @@ const clientRoute: Routes = [{
   path: '',
   component: LayoutClientComponent,
   children: [
+    {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
     {path: 'products', component: ProductsComponent},
     {path: 'registration', component: RegistrationComponent},
@@ -28,6 +31,7 @@ const clientRoute: Routes = [{
     LayoutClientComponent
   ],
   imports: [
+    LoginModule,
     ProductsModule,
     FormsModule,
     HomeModule,

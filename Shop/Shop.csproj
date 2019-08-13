@@ -43,16 +43,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\api\auth.api.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\api\base.api.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\app\app.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\user.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\home\home.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\layoutClient.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\layoutClient.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pages\client\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pages\client\login\login.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\nav-menu\nav-menu.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\products\products.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\registration\registration.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\registration\registration.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\reg.service.ts" />
   </ItemGroup>
 
