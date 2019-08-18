@@ -13,6 +13,9 @@ export class AuthApiService {
   login = (userData: UserAuthModel): Observable<UserAuthTokenModel> => {
     return this.baseApi.post<UserAuthTokenModel>('/login', userData);
   };
+  getUserData = (userData): Observable<HttpEvent<UserDataModel>> => {
+    return this.baseApi.get<UserDataModel>('/user', userData);
+  };
   getToken = (): string => {
     return window.localStorage.getItem('Authorization');
   };

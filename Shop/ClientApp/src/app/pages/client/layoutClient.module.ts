@@ -11,6 +11,7 @@ import {RegistrationModule} from "./registration/registration.module";
 import {RegistrationComponent} from "./registration/registration.component";
 import {LoginComponent} from "./login/login.component";
 import {LoginModule} from "./login/login.module";
+import {AuthGuard} from "../../services/authGuardService";
 
 
 
@@ -22,7 +23,7 @@ const clientRoute: Routes = [{
   children: [
     {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'products', component: ProductsComponent},
+    {path: 'products', component: ProductsComponent, canActivate: [AuthGuard]},
     {path: 'registration', component: RegistrationComponent},
   ]
 }];
@@ -42,7 +43,7 @@ const clientRoute: Routes = [{
   exports: [
     LayoutClientComponent,
   ],
-  providers: []
+  providers: [AuthGuard],
 })
 
 export class LayoutClientModule {
