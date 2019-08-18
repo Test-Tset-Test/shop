@@ -2,7 +2,6 @@
 <ng-template [ngIf]="products"><!--[ngIfElse]="edit"-->
   <div *ngFor="let product of products">
     <a href="#">{{product.name}}</a>
-    <p>{{product.company}}</p>
     <p>{{product.price}}</p>
     <div>
       <button class="btn btn-sm btn-primary">Изменить</button>

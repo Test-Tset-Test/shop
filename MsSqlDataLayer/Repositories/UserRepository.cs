@@ -18,6 +18,7 @@ namespace MsSqlDataLayer.Repositories
             if (context.Users.Any(x => x.Login == data.Login))
                 return false;
             context.Users.Add(data);
+
             context.SaveChanges();
             return true;
         }
