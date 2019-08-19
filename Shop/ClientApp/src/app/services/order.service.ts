@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Order } from '../models/order';
+import {OrderModel} from "../models/order.model";
 
 @Injectable()
 export class OrderService {
 
-  private url = "/api/order";
+  private url = "/api/orders";
 
   constructor(private http: HttpClient) {
   }
@@ -14,10 +14,10 @@ export class OrderService {
     return this.http.get(this.url);
   }
 
-  createOrder(product: Order) {
+  createOrder(product: OrderModel) {
     return this.http.post(this.url, product);
   }
-  updateOrder(order: Order) {
+  updateOrder(order: OrderModel) {
 
     return this.http.put(this.url + '/' + order.id, order);
   }

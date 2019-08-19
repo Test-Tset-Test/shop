@@ -11,6 +11,7 @@ import {BaseApiService} from "./api/base.api.service";
 import {AuthApiService} from "./api/auth.api.service";
 import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./services/authGuardService";
+import {OrderService} from "./services/order.service";
 
 
 const appRoutes: Routes = [
@@ -28,7 +29,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [AuthGuard, AuthService, AuthApiService, BaseApiService, ProductsApiService,],
+  providers: [AuthGuard, AuthService, AuthApiService, BaseApiService, ProductsApiService,OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
