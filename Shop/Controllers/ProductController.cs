@@ -14,6 +14,7 @@ namespace Shop.Controllers
         IProductRepository repo;
         public ProductController(IProductRepository repo)
         {
+            this.repo = repo;
         }
 
 

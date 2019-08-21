@@ -10,7 +10,7 @@ namespace MsSqlDataLayer.Repositories
         public ProductRepository(MsSqlContext context) : base(context) { }
         public List<Product> GetProducts()
         {
-            return this.context.Products.ToList();
+            return context.Products.ToList();
         }
     }
 }

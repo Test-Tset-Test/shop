@@ -25,7 +25,7 @@ const clientRoute: Routes = [{
   children: [
     {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'orders', component: OrdersComponent},
+    {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
     {path: 'products', component: ProductsComponent, canActivate: [AuthGuard]},
     {path: 'registration', component: RegistrationComponent},
   ]

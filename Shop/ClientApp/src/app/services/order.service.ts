@@ -1,27 +1,18 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpEvent} from '@angular/common/http';
 import {OrderModel} from "../models/order.model";
+import {Observable} from "rxjs";
+import {BaseApiService} from "../api/base.api.service";
+import {AuthApiService} from "../api/auth.api.service";
 
 @Injectable()
 export class OrderService {
-
-  private url = "/api/orders";
-
-  constructor(private http: HttpClient) {
+  constructor(private baseService: BaseApiService, private authApiService: AuthApiService) {
   }
 
-  getOrders() {
-    return this.http.get(this.url);
-  }
-
-  createOrder(product: OrderModel) {
-    return this.http.post(this.url, product);
-  }
-  updateOrder(order: OrderModel) {
-
-    return this.http.put(this.url + '/' + order.id, order);
-  }
-  deleteOrder(id: number) {
-    return this.http.delete(this.url + '/' + id);
+  getOrders = (): Observable<HttpEvent<OrderModel>> => {
+    const myHeaders = {'Authorization': "Bearer " + this.authApiService.getToken()};
+    const myParams = new URLSearchParams();
+    return this.baseService.get<OrderModel>('/orders', {headers: myHeaders, params: myParams});
   }
 }
