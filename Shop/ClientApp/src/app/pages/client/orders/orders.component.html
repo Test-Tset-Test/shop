@@ -10,7 +10,7 @@
     <tr *ngFor="let order of orders; let i = index">
       <th scope="row">{{ i }}</th>
       <td>
-        <a href="#">{{order.userId}}</a>
+        <a routerLink="/order/{{order.id}}">{{order.userId}}</a>
       </td>
     </tr>
     </tbody>

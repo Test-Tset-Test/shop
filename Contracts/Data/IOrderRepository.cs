@@ -5,6 +5,6 @@ namespace Contracts.Data
 {
     public interface IOrderRepository
     {
-        List<Order> GetOrders();
+        List<Order> GetOrders(int idUser);
     }
 }

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {LayoutClientComponent} from "./layoutClient.component";
 import {HomeComponent} from "./home/home.component";
@@ -14,6 +14,8 @@ import {LoginModule} from "./login/login.module";
 import {AuthGuard} from "../../services/authGuardService";
 import {OrdersComponent} from "./orders/orders.component";
 import {OrdersModule} from "./orders/orders.module";
+import {OrderComponent} from "./order/order.component";
+import {OrderModule} from "./order/order.module";
 
 
 
@@ -26,10 +28,12 @@ const clientRoute: Routes = [{
     {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
     {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
+    {path: 'order/:id', component: OrderComponent, canActivate: [AuthGuard]},
     {path: 'products', component: ProductsComponent, canActivate: [AuthGuard]},
     {path: 'registration', component: RegistrationComponent},
   ]
 }];
+
 @NgModule({
   declarations: [
     LayoutClientComponent
@@ -38,6 +42,7 @@ const clientRoute: Routes = [{
     LoginModule,
     ProductsModule,
     OrdersModule,
+    OrderModule,
     FormsModule,
     HomeModule,
     NavMenuModule,

@@ -6,7 +6,7 @@ namespace Contracts.Data
     public interface IUserRepository
     {
         bool CreateUser(User data);
-        bool LoginUser(string login, string password);
+        User LoginUser(string login, string password);
     }
     // Ключ для создания подписи (приватный)
     public interface IJwtSigningEncodingKey

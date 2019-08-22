@@ -13,31 +13,26 @@ namespace MsSqlDataLayer.Repositories
         public bool CreateUser(User data)
         {
             // validation
-            if (string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(data.Password))
                 return false;
             if (context.Users.Any(x => x.Login == data.Login))
                 return false;
-            var hmac = new System.Security.Cryptography.HMACSHA512();
-             byte[] passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            data.Password = passwordHash;
+//            var hmac = new System.Security.Cryptography.HMACSHA512();
+//             byte[] passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(data.Password));
+//             var alg = new System.Security.Cryptography.HMACSHA512(passwordHash);
+//            data.Password = passwordHash.str;
             context.Users.Add(data);
 
-//            context.SaveChanges();
-            return false;
+            context.SaveChanges();
+            return true;
         }
 
-        public bool LoginUser(string login, string password)
+        public User LoginUser(string login, string password)
         {
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password))
-                return false;
+                return null;
             var user = context.Users.SingleOrDefault(x => x.Password == password);
-
-            // check if username exists
-            if (user == null)
-                return false;
-
-            
-            return true;
+            return user;
         }
 
         /*private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)

@@ -22,18 +22,18 @@ namespace Shop.Controllers
         [Microsoft.AspNetCore.Mvc.HttpPost]
         public string LogIn([FromBody]LoginUser data, [FromServices] IJwtSigningEncodingKey signingEncodingKey)
         {
-            if(repo.LoginUser(data.Login, data.Password))
+            User user = repo.LoginUser(data.Login, data.Password);
+            if(user != null)
             {
-                ActionResult<string> tokenSecure = CreateToken(data, signingEncodingKey);
+                ActionResult<string> tokenSecure = CreateToken(user, signingEncodingKey);
                 return JsonConvert.SerializeObject(tokenSecure);
-                ;
             }
             return "false";
         }
         
         [AllowAnonymous]
         private ActionResult<string> CreateToken(
-            LoginUser authRequest,
+            User authRequest,
             [FromServices] IJwtSigningEncodingKey signingEncodingKey)
         {
             // 1. Проверяем данные пользователя из запроса.
@@ -42,7 +42,7 @@ namespace Shop.Controllers
             // 2. Создаем утверждения для токена.
             var claims = new Claim[]
             {
-                new Claim(ClaimTypes.NameIdentifier, authRequest.Login)
+                new Claim(ClaimTypes.NameIdentifier, authRequest.Id.ToString())
             };
  
             // 3. Генерируем JWT.

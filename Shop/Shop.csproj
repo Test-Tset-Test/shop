@@ -54,6 +54,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\login\login.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\nav-menu\nav-menu.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\orders\orders.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pages\client\orders\order\order.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\products\products.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\registration\registration.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\registration\registration.module.ts" />

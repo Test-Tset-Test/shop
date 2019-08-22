@@ -22,9 +22,8 @@ namespace Shop.Controllers
         [System.Web.Mvc.HttpGet]/*("[action]")]*/
         public IEnumerable<Order> Get()
         {
-            var tast  = User.FindFirstValue(ClaimTypes.NameIdentifier);
-             var tes = User.Identity.ToString();
-            return repo.GetOrders();
+            var idUser  = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return repo.GetOrders(System.Int32.Parse(idUser));
         }
     }
 }
