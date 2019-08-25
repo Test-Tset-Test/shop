@@ -50,7 +50,7 @@ namespace Shop.Controllers
                 issuer: "Shop",
                 audience: "Shop",
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(5),
+                expires: DateTime.Now.AddMinutes(61),
                 signingCredentials: new SigningCredentials(
                     signingEncodingKey.GetKey(),
                     signingEncodingKey.SigningAlgorithm)

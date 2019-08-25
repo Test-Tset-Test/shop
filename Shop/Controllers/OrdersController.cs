@@ -12,18 +12,24 @@ namespace Shop.Controllers
     [Route("api/orders")]
     public class OrdersController : Controller
     {
-        IOrderRepository repo;
-        public OrdersController(IOrderRepository repo)
+        IOrderRepository orderDb;
+        IOrderProductRepository orderProductDb;
+        public OrdersController(IOrderRepository orderDb, IOrderProductRepository orderProductDb)
         {
-            this.repo = repo;
+            this.orderDb = orderDb;
+            this.orderProductDb = orderProductDb;
         }
-
-
-        [System.Web.Mvc.HttpGet]/*("[action]")]*/
-        public IEnumerable<Order> Get()
+    
+        [HttpGet("list")]
+        public IEnumerable<Order> List()
         {
             var idUser  = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            return repo.GetOrders(System.Int32.Parse(idUser));
+            return orderDb.GetOrders(System.Int32.Parse(idUser));
+        }
+        [HttpGet("order")]
+        public IEnumerable<OrderProduct> Order(int id)
+        {
+            return orderProductDb.GetOrderProduct(id);
         }
     }
 }

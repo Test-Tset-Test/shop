@@ -1,1 +1,27 @@
 <h1>Order</h1>
+
+<ng-template [ngIf]="orders"><!--[ngIfElse]="edit"-->
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product</th>
+      <th scope="col">Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders; let i = index">
+      <th scope="row">{{ i }}</th>
+      <td>
+        <p>{{i}}</p>
+      </td>
+      <td>
+        <p>{{order.productId}}</p>
+      </td>
+      <td>
+        <p>{{order.count}}</p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-template>
