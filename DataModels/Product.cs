@@ -6,7 +6,7 @@ namespace DataModels
     {
         public int Id { get; set; }
         public string Name { get; set; }    // название 
-        public decimal Price { get; set; }  // цена
+        public int Price { get; set; }  // цена
         public IList<OrderProduct> ProductOrders{ get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace Shop.Controllers
             return orderDb.GetOrders(System.Int32.Parse(idUser));
         }
         [HttpGet("order")]
-        public IEnumerable<OrderProduct> Order(int id)
+        public IEnumerable<OrderProductView> Order(int id)
         {
             return orderProductDb.GetOrderProduct(id);
         }

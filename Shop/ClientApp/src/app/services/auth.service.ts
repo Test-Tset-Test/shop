@@ -11,16 +11,11 @@ export class AuthService {
   login = (user) => {
     return this.authApi.login(user);
   };
-  getUserData = () => {
-    const myHeaders = {'x-auth-token': this.authApi.getToken()};
-    const myParams = new URLSearchParams();
-    return this.authApi.getUserData({headers: myHeaders, params: myParams});
-  };
   checkAuthUser = () => {
     return !!window.localStorage.getItem('Authorization');
   };
   logout = () => {
-    window.localStorage.removeItem('authToken');
+    window.localStorage.removeItem('Authorization');
     this.router.navigate(['home']);
     return true;
   }

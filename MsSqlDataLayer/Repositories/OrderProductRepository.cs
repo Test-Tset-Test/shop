@@ -9,12 +9,28 @@ namespace MsSqlDataLayer.Repositories
     {
         public OrderProductRepository(MsSqlContext context) : base(context)
         {
+            
         }
 
-        public List<OrderProduct> GetOrderProduct(int idOrderGroup)
+        public List<OrderProductView> GetOrderProduct(int idOrderGroup)
         {
-//             List<Order> data = context.Orders.Where(user => user.UserId == idUser).Select(p => new Order()).ToList();
-            return context.ProductOrders.Where(order => order.OrderId == idOrderGroup).ToList();
+            List<OrderProductView> data = (from pd in context.ProductOrders
+                    join od in context.Products on pd.ProductId equals od.Id
+                    select new
+                    {
+                        pd.OrderId,
+                        pd.Count,
+                        od.Name,
+                        od.Price
+                    }
+                ).Where(order => order.OrderId == idOrderGroup).Select(x => new OrderProductView()
+                {
+                    Name = x.Name,
+                    Price = x.Price,
+                    Count = x.Count,
+                    OrderId = x.OrderId
+                }).ToList();
+            return data;
         }
     }
 }

@@ -11,5 +11,6 @@ export class OrderProduct {
     public orderId?: number,
     public product?: number,
     public productId?: number,
+    public name?: number,
   ) {}
 }

@@ -6,6 +6,6 @@ namespace Contracts.Data
     
     public interface IOrderProductRepository
     {
-        List<OrderProduct> GetOrderProduct(int idOrderGroup);
+        List<OrderProductView> GetOrderProduct(int idOrderGroup);
     }
 }
