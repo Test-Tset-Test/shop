@@ -23,7 +23,7 @@ namespace MsSqlDataLayer.Repositories
                         od.Name,
                         od.Price
                     }
-                ).Where(order => order.OrderId == idOrderGroup).Select(x => new OrderProductView()
+                ).Where(order => order.OrderId == idOrderGroup).Select(x => new OrderProductView
                 {
                     Name = x.Name,
                     Price = x.Price,
