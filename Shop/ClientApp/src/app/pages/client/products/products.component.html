@@ -1,13 +1,15 @@
-<h1>Products</h1>
-<ng-template [ngIf]="products"><!--[ngIfElse]="edit"-->
-  <div *ngFor="let product of products">
-    <a href="#">{{product.name}}</a>
-    <p>{{product.price}}</p>
-    <div>
-      <button class="btn btn-sm btn-primary">Изменить</button>
-      <button class="btn btn-sm btn-danger">Удалить</button>
-    </div>
+<div class="">
+  <div class="row">
+    <ng-template [ngIf]="products"><!--[ngIfElse]="edit"-->
+      <div class="card col-sm-2" style="width:400px; margin: 5px" *ngFor="let product of products">
+        <div class="card-body">
+          <h4 class="card-title">{{product.name}}</h4>
+          <p class="card-text">{{product.price}}</p>
+          <a href="#" class="btn btn-primary">more</a>
+        </div>
+      </div>
+    </ng-template>
   </div>
-</ng-template>
+</div>
 
 <!--(click)="delete(p)-->
