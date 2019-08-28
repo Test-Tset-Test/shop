@@ -58,6 +58,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\products\products.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\registration\registration.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\registration\registration.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\pages\client\statistics\statistics.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\authGuardService.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\reg.service.ts" />

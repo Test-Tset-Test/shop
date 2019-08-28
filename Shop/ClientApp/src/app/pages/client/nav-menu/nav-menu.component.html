@@ -33,6 +33,11 @@
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/statistics"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Statistics
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/login"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-th-list'></span> Log In
               </a>

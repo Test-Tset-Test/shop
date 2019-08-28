@@ -16,6 +16,8 @@ import {OrdersComponent} from "./orders/orders.component";
 import {OrdersModule} from "./orders/orders.module";
 import {OrderComponent} from "./order/order.component";
 import {OrderModule} from "./order/order.module";
+import { StatisticsComponent } from './statistics/statistics.component';
+import {StatisticsModule} from "./statistics/statistics.module";
 
 
 
@@ -30,16 +32,18 @@ const clientRoute: Routes = [{
     {path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
     {path: 'order/:id', component: OrderComponent, canActivate: [AuthGuard]},
     {path: 'products', component: ProductsComponent, canActivate: [AuthGuard]},
+    {path: 'statistics', component: StatisticsComponent, canActivate: [AuthGuard]},
     {path: 'registration', component: RegistrationComponent},
   ]
 }];
 
 @NgModule({
   declarations: [
-    LayoutClientComponent
+    LayoutClientComponent,
   ],
   imports: [
     LoginModule,
+    StatisticsModule,
     ProductsModule,
     OrdersModule,
     OrderModule,
