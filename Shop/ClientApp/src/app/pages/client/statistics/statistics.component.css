@@ -1,0 +1,7 @@
+.header-statistics_form{
+  display: flex;
+  flex-direction: row;
+}
+.header-statistics_form > .form-group{
+  margin: 0 15px;
+}
