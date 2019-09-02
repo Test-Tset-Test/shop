@@ -4,11 +4,11 @@ import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {StatisticsComponent} from "./statistics.component";
-import {ChartModule} from "angular2-chartjs";
+import {CustomChartModule} from "../../../components/custom-chart/custom-chart.module";
 
 @NgModule({
   declarations: [StatisticsComponent],
-  imports: [CommonModule, FormsModule, RouterModule, ChartModule],
+  imports: [CommonModule, FormsModule, RouterModule, CustomChartModule],
   exports: [StatisticsComponent],
   providers: [/*RegService*/],
 })

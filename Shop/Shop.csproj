@@ -38,7 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\components" />
     <Folder Include="Models\" />
   </ItemGroup>
 
@@ -46,6 +45,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\api\auth.api.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\api\base.api.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\app\app.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\custom-chart\castom-chart.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\custom-chart\custom-chart.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\user.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\home\home.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\pages\client\layoutClient.component.ts" />
