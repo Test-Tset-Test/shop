@@ -13,7 +13,6 @@ import {AuthService} from "./services/auth.service";
 import {AuthGuard} from "./services/authGuardService";
 import {OrderService} from "./services/order.service";
 
-
 const appRoutes: Routes = [
   {path: '', component: LayoutClientComponent},
   // {path: '**', redirectTo: 'auth/login'},
