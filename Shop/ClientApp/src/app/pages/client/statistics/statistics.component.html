@@ -30,5 +30,8 @@
   </div>
   <div class="body-statistics">
     <app-custom-chart [type]="type" [options]="options" [data]="data" ></app-custom-chart>
+    <button (click)="changeType('pie')">Pie</button>
+    <button (click)="changeType('doughnut')">doughnut</button>
+    <button (click)="changeType('line')">line</button>
   </div>
 </div>

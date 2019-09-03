@@ -8,20 +8,40 @@ import { Component, OnInit } from '@angular/core';
 export class StatisticsComponent {
   type = 'line';
   data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-      {
-        label: "My First dataset",
-        data: [65, 59, 80, 81, 56, 55, 40]
-      }
-    ]
+    datasets: [{
+      label: 'First dataset',
+      data: [0, 50, 90, 150]
+    }],
+    labels: ['January', 'February', 'March', 'April']
   };
   options = {
     responsive: true,
-    maintainAspectRatio: false
+    title:      {
+      display: true,
+      text:    "Chart.js Time Scale"
+    },
+    scales:     {
+      xAxes: [{
+        ticks: {
+          suggestedMin: 50,
+          suggestedMax: 100
+        }
+      }],
+
+      yAxes: [{
+        ticks: {
+          max: 100,
+          min: 0,
+          stepSize:15
+        }
+      }]
+    }
   };
   constructor(){
   }
 
+  changeType(type: string){
+    this.type = type;
+  }
 
 }
