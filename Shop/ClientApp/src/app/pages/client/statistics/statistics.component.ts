@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {log} from "util";
 
 @Component({
   selector: 'app-statistics',
@@ -6,42 +7,100 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent {
-  type = 'line';
-  data = {
+  public type = 'line';
+  public data = {
+    // Labels should be Date objects
+    labels: ['2017-10-16', new Date(2017, 10, 17), new Date(2017, 10, 30)],
     datasets: [{
-      label: 'First dataset',
-      data: [0, 50, 90, 150]
-    }],
-    labels: ['January', 'February', 'March', 'April']
+      fill: false,
+      label: 'Page Views',
+      data: [280, 250, 340],
+      borderColor: '#fe8b36',
+      backgroundColor: '#fe8b36',
+      lineTension: 0,
+    }]
   };
-  options = {
+  public options = {
+    fill: false,
     responsive: true,
-    title:      {
-      display: true,
-      text:    "Chart.js Time Scale"
-    },
-    scales:     {
+    scales: {
       xAxes: [{
-        ticks: {
-          suggestedMin: 50,
-          suggestedMax: 100
+        type: 'time',
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: "Date",
         }
       }],
-
       yAxes: [{
         ticks: {
-          max: 100,
-          min: 0,
-          stepSize:15
+          beginAtZero: true,
+        },
+        display: true,
+        scaleLabel: {
+          display: true,
+          labelString: "Page Views",
         }
       }]
     }
   };
-  constructor(){
+  public dataForm = {
+    body: {
+      class: '.panel__content',
+      fields: [
+        {
+          id: 'select-table',
+          name: 'Выберите таблицу',
+          placeholder: '',
+          type: 'selectbox',
+          classes: 'form-control form-control-sm',
+          data: [{id: "test", name: "test", class: {'first': true}}],
+          selected: ''
+        },
+        {
+          id: 'from-date',
+          name: 'От',
+          placeholder: '',
+          type: 'date',
+          classLabel: 'form-group',
+          classInput: 'form-control form-control-sm',
+          data: {},
+          selected: ''
+        },
+        {
+          id: 'to-date',
+          name: 'До',
+          placeholder: '',
+          type: 'date',
+          classLabel: 'form-group',
+          classInput: 'form-control form-control-sm',
+          data: {},
+          selected: ''
+        },
+      ]
+    },
+    button: {
+      classDiv: '',
+      name: 'Применить',
+      classButton: 'btn btn-success',
+      type: 'button'
+    }
+  };
+
+  constructor() {
   }
 
-  changeType(type: string){
+  changeType(type: string) {
     this.type = type;
+  }
+
+  filterTables(filter: object) {
+    debugger;
+    console.log(filter);
+  }
+
+  changeFilter() {
+
   }
 
 }

@@ -1,0 +1,23 @@
+<div class="panel__content" *ngIf="dataForm">
+  <label class="form__row" *ngFor="let form of dataForm.body.fields">
+    <ng-template [ngIf]="form.type == 'selectbox'">
+      <span class="text">{{ form.name }}</span>
+      <span class="select">
+      <select [(ngModel)]="form.selected" [ngClass]="form['classes']">
+          <option *ngFor="let item of form.data" [ngValue]="item" value="{{item['id']}}"
+                  [ngClass]="item['class']">{{item['name']}}</option>
+      </select>
+    </span>
+    </ng-template>
+    <ng-template [ngIf]="form.type != 'selectbox'">
+      <label [ngClass]="form['classLabel']">
+        <span class="text">{{ form.name }}</span>
+        <input type="{{ form.type }}" [(ngModel)]="form.selected" placeholder="{{ form.placeholder }}"
+               [ngClass]="form['classInput']">
+      </label>
+    </ng-template>
+  </label>
+</div>
+<div [ngClass]="dataForm.button['classDiv']">
+  <button type="button" [ngClass]="dataForm.button['classButton']" (click)="enableChange()">{{dataForm.button['name']}}</button>
+</div>
